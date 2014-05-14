@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) -->
+<serviceGroup>
+    <service name="StockPriceService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.examples.www.wsdl.stockpriceservice_wsdl.StockPriceServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.examples.www.wsdl.stockpriceservice_wsdl.StockPriceServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="StockPrice" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.examples.com/wsdl/StockPriceService.wsdl">
+            <actionMapping>StockPrice</actionMapping>
+            <outputActionMapping>http://www.examples.com/wsdl/StockPriceService.wsdl/StockPrice_PortType/StockPriceResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

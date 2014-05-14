@@ -1,0 +1,48 @@
+<definitions name="StockPriceService"
+   targetNamespace="http://www.examples.com/wsdl/StockPriceService.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://www.examples.com/wsdl/StockPriceService.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+   <message name="StockPriceRequest">
+      <part name="company" type="xsd:string"/>
+   </message>
+   <message name="StockPriceResponse">
+      <part name="price" type="xsd:double"/>
+   </message>
+
+   <portType name="StockPrice_PortType">
+      <operation name="StockPrice">
+         <input message="tns:StockPriceRequest"/>
+         <output message="tns:StockPriceResponse"/>
+      </operation>
+   </portType>
+
+   <binding name="StockPrice_Binding" type="tns:StockPrice_PortType">
+   <soap:binding style="rpc"
+      transport="http://schemas.xmlsoap.org/soap/http"/>
+   <operation name="StockPrice">
+      <soap:operation soapAction="StockPrice"/>
+      <input>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="urn:examples:stockpriceservice"
+            use="encoded"/>
+      </input>
+      <output>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="urn:examples:stockpriceservice"
+            use="encoded"/>
+      </output>
+   </operation>
+   </binding>
+
+   <service name="StockPriceService">
+      <documentation>WSDL File for StockPriceService</documentation>
+      <port binding="tns:StockPrice_Binding" name="StockPrice_Port">
+         <soap:address location="http://www.examples.com/StockPrice/"/>
+      </port>
+   </service>
+</definitions>
